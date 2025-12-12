@@ -1,0 +1,7 @@
+#SPDX-License-Identifier: MIT-0
+---
+# tasks file for copy-index
+- name: Copying Index File to Remote Machine
+  copy:
+    src: index.html
+    dest: /var/www/html

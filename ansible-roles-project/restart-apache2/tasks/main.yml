@@ -1,0 +1,7 @@
+#SPDX-License-Identifier: MIT-0
+---
+# tasks file for restart-apache2
+- name: Restart Apache2 Service
+  service:
+    name: apache2
+    state: restarted

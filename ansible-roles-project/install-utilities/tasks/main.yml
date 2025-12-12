@@ -1,0 +1,7 @@
+#SPDX-License-Identifier: MIT-0
+---
+# tasks file for install-utilities
+- name: Install Utilities
+  apt:
+    name: ['git', 'curl', 'vim', 'tree', 'wget']
+    state: present

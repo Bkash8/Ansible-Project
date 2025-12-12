@@ -1,0 +1,24 @@
+- name: Create user and group on Ubuntu
+  hosts: all
+  become: yes
+  tasks:
+    - name: Create a User
+      user:
+        name: shamishan
+        comment: "Shamishan"
+        uid: 1050
+        password: "shan@123"
+        shell: /bin/bash
+        state: absent
+    - name: Create a group
+      group:
+        name: developer
+        gid: 1055
+        state: absent
+
+    - name: Ensure user is in the developer group
+      user:
+        name: shamishan
+        groups: developer
+        append: yes
+        state: absent

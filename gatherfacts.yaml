@@ -1,0 +1,12 @@
+- name: GatherFacts
+  hosts: all
+  tasks:
+    - name: OS family about Managed Node
+      debug:
+        msg: "{{ ansible_os_family }}"
+    - name: OS Distribution about Managed Node
+      debug:
+        msg: "{{ ansible_distribution }}"
+    - name: Python3 Interpreter Ver abou Managed Node
+      debug:
+        msg: "{{ discovered_interpreter_python }}"

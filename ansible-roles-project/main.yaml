@@ -1,0 +1,11 @@
+---
+- name: Install Apache2, Utilites, Copy and Service Restart
+  hosts: all
+  gather_facts: no
+  become: yes
+  roles:
+    - install-apache2
+    - install-utilities
+    - copy-index
+    - restart-apache2
+

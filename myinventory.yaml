@@ -1,0 +1,11 @@
+all:
+  children:
+    ubuntu:
+      hosts:
+        ubuntu1:
+          ansible_host: 192.168.1.252
+          ansible_user: bkash14
+          ansible_ssh_private_key_file: "~/.ssh/ansible-bks.pem"
+          ansible_become: yes
+          ansible_become_method: sudo
+          ansible_become_pass: "0r@cle"
