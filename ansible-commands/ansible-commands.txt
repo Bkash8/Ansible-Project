@@ -6,7 +6,7 @@ Ad-Hoc commands:
 	ansible ubuntu1 -m apt -a "name=git state=present" -b -K ------to install git
 	ansible ubuntu3 -m service -a "name=git state=stopped" -b -K ------to stop git
 	ansible ubuntu3 -m service -a "name=git state=started" -b -K ------to start git
-	ansible ubuntu2 -m copy -a "src=/home/bkash8/Dockerfile1 dest=/home/bkash14/sonatype-nexus" ------it copy Dockerfile1 from the source /home/bkash8 to 		destination folder /home/bkash14/sonatype-nexus.
+	ansible ubuntu2 -m copy -a "src=/home/bkash8/Dockerfile1 dest=/home/bkash14/sonatype-nexus" ------it copy Dockerfile1 from the source /home/bkash8 to destination folder /home/bkash14/sonatype-nexus.
 	ansible ubuntu1 -m user -a "name=new_user state=present" -b -K ------to add new user
 	ansible ubuntu1 -m stat -a "name=/home/bkash14/sonatype-nexus/Dockerfile1" -------to check the status of Dockerfile1
 
