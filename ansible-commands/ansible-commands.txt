@@ -1,0 +1,66 @@
+Ad-Hoc commands:
+
+	ansible -m ping all
+	ansible ubuntu2  -m apt -a "name=git state=absent" -b
+	ansible ubuntu1 -m apt -a "name=git state=absent" -b -K ------to uninstall git
+	ansible ubuntu1 -m apt -a "name=git state=present" -b -K ------to install git
+	ansible ubuntu3 -m service -a "name=git state=stopped" -b -K ------to stop git
+	ansible ubuntu3 -m service -a "name=git state=started" -b -K ------to start git
+	ansible ubuntu2 -m copy -a "src=/home/bkash8/Dockerfile1 dest=/home/bkash14/sonatype-nexus" ------it copy Dockerfile1 from the source /home/bkash8 to 		destination folder /home/bkash14/sonatype-nexus.
+	ansible ubuntu1 -m user -a "name=new_user state=present" -b -K ------to add new user
+	ansible ubuntu1 -m stat -a "name=/home/bkash14/sonatype-nexus/Dockerfile1" -------to check the status of Dockerfile1
+
+
+Playbook Commands:
+
+Used to run YAML playbooks.
+
+	ansible-playbook site.yaml ------------Run a playbook
+	ansible-playbook site.yaml --limit ubuntu1 ---------- Run playbook on limited host
+	ansible-playbook site.yaml -K --------- Ask for become password (sudo)
+	ansible-playbook site.yaml --tags "install" ---------- Run playbook with tags
+	ansible-playbook site.yaml --syntax-check ---------- Check playbook for syntax errors
+	ansible-playbook site.yaml --check --------- Run playbook in dry-run mode
+
+Ansible Galaxy Commands:
+	ansible-galaxy role init install-apache2
+	ansible-galaxy role init install-utilities
+	ansible-galaxy role init copy-index
+	ansible-galaxy role init restart-apache2
+
+
+
+Ad-hoc vs playbook
+
+✅ 1. Ad-hoc Commands (Quick One-time Tasks)
+
+✔ What they are:
+One-line commands run directly from the terminal.
+Used for quick, simple, temporary tasks.
+No need to write a file.
+
+✔ Use cases:
+Restart a service
+Install a package
+Check uptime
+Copy a file
+Ping servers
+
+
+
+✅ 2. Playbooks (Permanent, Automated, Repeatable Tasks)
+
+✔ What they are:
+YAML files containing multiple tasks, roles, configs.
+Used for automation, repeatability, complex tasks, config management.
+Can run again and again (idempotent).
+
+✔ Use cases:
+Deploy Docker on all servers
+Install full LAMP stack
+Configure firewalls
+Manage users
+Scheduled CI/CD automation
+
+
+Playbook can be written in "ini" or "YAML" file
